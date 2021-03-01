@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Joe's Hotdog Stand</title>
+
+</head>
+<body>
+
+	<div id="header">
+		<h1 id="header"> Welcome to Joe's Hotdog Stand!</h1>
+	</div>
+
+	<script language="javascript">
+		document.getElementById("header").style.color = "#f26161";
+		document.getElementById("header").style.textAlign = "center";
+		document.getElementById("header").style.marginBottom = "3%";
+	</script>
+
+	<div id="content">
+
+		<script language="javascript">
+			document.getElementById("content").style.padding = "2%"
+			document.getElementById("content").style.maxWidth = "90vw"
+		</script>
+
+		<div id="pricesBlock" style="display: inline-block;">
+			<script language="javascript">
+
+				document.write("Prices:" + "<br><br>")
+
+				document.write("Hot Dog: $3.25" + "<br>")
+				document.write("French fries: $2.00" + "<br>")
+				document.write("Soda: $1.50" + "<br><br>")
+
+				document.write("Massachusetts meals tax: 6.25% <br>")
+
+				document.getElementById("pricesBlock").style.background = "lightblue"
+				document.getElementById("pricesBlock").style.fontSize = "2vw"
+				document.getElementById("pricesBlock").style.padding = "2%"
+				document.getElementById("pricesBlock").style.verticalAlign = "middle"
+				document.getElementById("pricesBlock").style.textAlign = "center"
+				document.getElementById("pricesBlock").style.margin = "3%"
+			</script>
+		</div>
+
+		<div id="OrderBlock" style="display: inline-block;">
+			<script language="javascript">
+
+				hotDogPrice = 3.25
+				frenchFriesPrice = 2.00
+				sodaPrice = 1.50
+
+				numberOfHotDogs = prompt("How many hot dogs would you like?", "0")
+				numberOfFrenchFries = prompt("How many french fries would you like?", "0")
+				numberOfSodas = prompt("How many sodas would you like?", "0")
+
+				document.write("Your order:" + "<br><br>")
+
+				document.write(numberOfHotDogs + " hot dogs" + "<br>")
+				document.write(numberOfFrenchFries + " french fries" + "<br>")
+				document.write(numberOfSodas + " sodas" + "<br><br>")
+
+				priceBeforeTax = numberOfHotDogs * hotDogPrice + numberOfFrenchFries * frenchFriesPrice + numberOfSodas * sodaPrice
+
+				if (priceBeforeTax > 20) {
+					priceBeforeTax -= (priceBeforeTax / 10)
+					document.write("Your order will get Joe's Special discount! <br>")
+					document.write("The price of your order before tax is: $" + priceBeforeTax.toFixed(2) + "<br><br>")
+				}
+
+				else {
+					document.write("The price of your order before tax is: $" + priceBeforeTax.toFixed(2) + "<br><br>")
+				}
+
+				taxAmount = priceBeforeTax / 100 * 6.25
+
+				totalPrice = priceBeforeTax + taxAmount
+
+				document.write("After tax ($" + taxAmount.toFixed(2) + "), your total is: $" + totalPrice.toFixed(2) + "<br>")
+
+				document.getElementById("OrderBlock").style.background = "Cornsilk"
+				document.getElementById("OrderBlock").style.fontSize = "2vw"
+				document.getElementById("OrderBlock").style.padding = "2%"
+				document.getElementById("OrderBlock").style.verticalAlign = "middle"
+				document.getElementById("OrderBlock").style.textAlign = "center"
+				document.getElementById("OrderBlock").style.margin = "5%"
+
+			</script>
+		</div>
+	</div>
+
+</body>
+</html>
